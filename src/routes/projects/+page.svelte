@@ -7,7 +7,6 @@
 <div class="projects">
     <article>
         <h2>Assignment 2: Data Exploration </h2> 
-        <img src="/images/Dashboard 1.png" alt="`" width="90%" height="auto">
         <p> Exploring investment speculation's effects on Boston's neighborhoods and pricing, specifically investigating LLC and corporate takeovers </p>
     </article>
     <article>
