@@ -7,12 +7,11 @@
 <div class="projects">
     <article>
         <h2>Assignment 2: Data Exploration </h2> 
-        <img src="../images/Dashboard 1.png" alt="`" width="90%" height="auto">
+        <img src="/images/Dashboard 1.png" alt="`" width="90%" height="auto">
         <p> Exploring investment speculation's effects on Boston's neighborhoods and pricing, specifically investigating LLC and corporate takeovers </p>
     </article>
     <article>
         <h2>Assignment 3: Visualization Critique & Redesign</h2>
-        <img src="../images/spiralNY.png" alt="`" width="90%" height="auto">
         <p> Using "critique by redesign" to analyze a COVID-19 cases visualization and create an original visualization to rethink the data and contextual narratives </p>
     </article>
     <article>
