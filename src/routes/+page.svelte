@@ -8,5 +8,6 @@
 	<div class="text-box">
 		<h2>Hello!</h2>
 		<p>Hannah Chiou is a Wellesley College senior majoring in data science. Special interests include film, math, & running. </p>
+		<p> test </p>
 	</div>
 </div>
