@@ -116,7 +116,6 @@ document.body.insertAdjacentHTML("afterbegin", `
 let select = document.querySelector("select");
 let html = document.documentElement;
 
-
 // Apply theme to page
 function applyTheme(theme) {
     if (theme === "dark") {

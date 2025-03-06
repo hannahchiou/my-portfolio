@@ -1,3 +1,15 @@
+<script>
+    export let data = {};
+    export let hLevel = 2;
+  </script>
+
+<article>
+    <svelte:element this={"h" + hLevel}>{data.title}</svelte:element>
+    <img src={data.image} alt="">
+    <p> {data.description}</p>
+</article>
+
+<style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -287,8 +299,8 @@ button:hover {
 /* Projects Grid */
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-  gap: 1.5em; /* Slightly larger gap for better spacing */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
 }
 
 .projects article {
@@ -299,4 +311,5 @@ button:hover {
 
 .projects h2 {
   margin: 0;
-} 
+}
+</style>
