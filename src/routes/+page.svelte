@@ -2,9 +2,7 @@
 <script>
     import projects from "$lib/projects.json";
     import Project from "$lib/Project.svelte";
-
 </script>
-
 
 <svelte:head>
   <title>Home</title>

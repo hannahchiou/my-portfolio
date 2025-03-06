@@ -13,7 +13,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  /* Light Mode Colors */
   --color-bg: #f2eee9;
   --color-text: #2a2727;
   --color-card: #e8e4dd;
@@ -22,13 +21,22 @@
   --color-border: #ccc;
 }
 
-.dark-mode{
+.dark-mode {
   --color-bg: #16120d;
   --color-text: #d8d5d5;
   --color-card: #211d17;
   --color-accent: #ca3416;
   --color-primary: #7075bd;
   --color-border: #555;
+}
+
+.light-mode {
+  --color-bg: #f2eee9;
+  --color-text: #2a2727;
+  --color-card: #e8e4dd;
+  --color-accent: #e85234;
+  --color-primary: #42478f;
+  --color-border: #ccc;
 }
 
 html {
