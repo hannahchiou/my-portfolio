@@ -14,31 +14,31 @@ function $$ (selector, context = document) {
 // }
 
 // STEP 3 - Dynamically Create Navigation Bar
-let pages = [
-    { url: ".", title: "Home" },
-    { url: "projects", title: "Projects" },
-    { url: "resume", title: "Resume" },
-    { url: "contact", title: "Contact" },
-    { url: "https://github.com/hannahchiou", title: "Github" }
-];
+// let pages = [
+//     { url: ".", title: "Home" },
+//     { url: "projects", title: "Projects" },
+//     { url: "resume", title: "Resume" },
+//     { url: "contact", title: "Contact" },
+//     { url: "https://github.com/hannahchiou", title: "Github" }
+// ];
 
-let nav = document.createElement("nav");
-document.body.prepend(nav);
+// let nav = document.createElement("nav");
+// document.body.prepend(nav);
 
-for (let p of pages) {
-    let a = document.createElement("a");
-    a.href = p.url;
-    a.textContent = p.title;
-    nav.append(a);
+// for (let p of pages) {
+//     let a = document.createElement("a");
+//     a.href = p.url;
+//     a.textContent = p.title;
+//     nav.append(a);
 
-    if (a.host === location.host && a.pathname === location.pathname) {
-        a.classList.add("current");
-    }
+//     if (a.host === location.host && a.pathname === location.pathname) {
+//         a.classList.add("current");
+//     }
 
-    if (a.host !== location.host) {
-        a.target = "_blank";
-    }
-}
+//     if (a.host !== location.host) {
+//         a.target = "_blank";
+//     }
+// }
 
 // STEP 4 - Insert Theme Selection Dropdown
 // document.body.insertAdjacentHTML("afterbegin", `
@@ -111,6 +111,5 @@ for (let p of pages) {
 
 // // Automatically apply the theme on page load
 // loadTheme();
-
 
 
