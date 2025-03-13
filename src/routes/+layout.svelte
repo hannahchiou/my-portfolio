@@ -77,20 +77,16 @@
     }
 </script>
 
-
-
-
 <nav>
     {#each pages as p}
-        <a
-            href={p.url}
-            class:current={$page.route.id === p.url}
-            target={p.url.startsWith("http") ? "_blank" : null}
-        >
+        <a href={p.url} 
+            class:current={$page.url.pathname === '/' + p.url || ($page.url.pathname === '/' && p.url === '.')} 
+            target={p.url.startsWith("http") ? "_blank" : undefined}>
             {p.title}
         </a>
     {/each}
 </nav>
+
 
 <label class="color-scheme">
     Theme:
