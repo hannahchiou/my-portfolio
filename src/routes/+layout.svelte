@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import { page } from "$app/stores";
 
     let pages = [
@@ -13,13 +13,72 @@
     let localStorage = globalThis.localStorage ?? {};
 
     let colorScheme = "auto";
-
     if (localStorage.colorScheme) {
     colorScheme = localStorage.colorScheme;
     }
     $: localStorage.colorScheme = colorScheme;
 
+</script> -->
+
+<script>
+    import { onMount } from "svelte";
+    import { page } from "$app/stores";
+
+    let pages = [
+        { url: ".", title: "Home" },
+        { url: "projects", title: "Projects" },
+        { url: "resume", title: "Resume" },
+        { url: "contact", title: "Contact" },
+        { url: "https://github.com/hannahchiou", title: "Github" }
+    ];
+
+    let colorScheme = "auto"; // Default to system preference
+    let root;
+
+    onMount(() => {
+        if (typeof window !== "undefined") {
+            root = document.documentElement;
+            const storedScheme = localStorage.getItem("colorScheme");
+
+            if (storedScheme) {
+                colorScheme = storedScheme;
+            } else {
+                // Default to system preference
+                colorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            applyTheme();
+        }
+    });
+
+    // Update theme when user changes selection
+    $: if (typeof window !== "undefined" && colorScheme) {
+        localStorage.setItem("colorScheme", colorScheme);
+        applyTheme();
+    };
+
+    function applyTheme() {
+        if (!root) return;
+
+        if (colorScheme === "dark") {
+            root.style.setProperty("--color-bg", "#16120d");
+            root.style.setProperty("--color-text", "#d8d5d5");
+            root.style.setProperty("--color-card", "#211d17");
+            root.style.setProperty("--color-accent", "#ca3416");
+            root.style.setProperty("--color-primary", "#7075bd");
+            root.style.setProperty("--color-border", "#555");
+        } else {
+            root.style.setProperty("--color-bg", "#f2eee9");
+            root.style.setProperty("--color-text", "#2a2727");
+            root.style.setProperty("--color-card", "#e8e4dd");
+            root.style.setProperty("--color-accent", "#e85234");
+            root.style.setProperty("--color-primary", "#42478f");
+            root.style.setProperty("--color-border", "#ccc");
+        }
+    }
 </script>
+
+
+
 
 <nav>
     {#each pages as p}
@@ -108,7 +167,7 @@
         --color-border: #ccc;
     } */
 
-    @media(prefers-color-scheme: dark) {
+    /* @media(prefers-color-scheme: dark) {
         :root {
         --color-bg: #16120d;
         --color-text: #d8d5d5;
@@ -117,7 +176,7 @@
         --color-primary: #7075bd;
         --color-border: #555;
         } 
-    }
+    } */
 
 </style>
 
