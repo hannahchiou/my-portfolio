@@ -7,7 +7,9 @@
     <svelte:element this={"h" + hLevel}>{data.title}</svelte:element>
     <img src={data.image} alt="">
     <p> {data.description}</p>
+    <div class="project-year">Created: {data.year}</div>
 </article>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -305,7 +307,7 @@ button:hover {
 
 
 /* Projects Grid */
-.projects {
+/* .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
@@ -315,9 +317,37 @@ button:hover {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 3;
+  gap: 0.75em;
+}
+
+.projects h2 {
+  margin: 0;
+} */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Adjusted for dynamic content */
+  gap: 0.75em;
 }
 
 .projects h2 {
   margin: 0;
 }
+
+/* Style for the Project Year */
+.project-year {
+  font-family: 'Inter';
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.7;
+  align-self: start; 
+  margin-top: 11rem;
+}
+
 </style>
