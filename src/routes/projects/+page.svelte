@@ -45,7 +45,7 @@
   <title>Course Assignments</title>
 </svelte:head>
 
-<h1> {projects.length} Projects</h1>
+<h1> {filteredByYear.length} Projects</h1>
 
 <Pie data={pieData} bind:selectedIndex={selectedYearIndex} />
 
