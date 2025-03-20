@@ -81,8 +81,9 @@
 <nav>
     {#each pages as p}
         <a href={p.url} 
-            class:current={"." + $page.route.id === p.url}
-            target={p.url.startsWith("http") ? "_blank" : undefined}>
+        class:current={$page.url.pathname.endsWith('/' + p.url) || ($page.url.pathname === "/" && p.url === ".")}
+        target={p.url.startsWith("http") ? "_blank" : undefined}
+        rel={p.url.startsWith("http") ? "noopener noreferrer" : undefined}>
             {p.title}
         </a>
     {/each}
@@ -122,7 +123,6 @@
     nav a {
         flex: 1;
         text-align: center;
-        text-decoration: none;
         color: inherit;
         padding: 0.75em 0.5em;
     }
