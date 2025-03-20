@@ -23,7 +23,7 @@
 		arcs = arcData.map(d => arcGenerator(d));
     }
 
-    let colors = d3.scaleOrdinal(d3.schemeTableau10);
+    let colors = d3.scaleOrdinal(d3.schemeSet2);
 
 </script>
 
