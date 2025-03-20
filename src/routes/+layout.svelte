@@ -76,12 +76,15 @@
             root.style.setProperty("--color-border", "#ccc");
         }
     }
+
+    $: currentPath = $page.url.pathname.replace(/\/$/, ""); 
+
 </script>
 
 <nav>
     {#each pages as p}
         <a href={p.url} 
-        class:current={$page.url.pathname.endsWith('/' + p.url) || ($page.url.pathname === "/" && p.url === ".")}
+        class:current={(p.url === "." && currentPath === "/my-portfolio") || currentPath.endsWith('/' + p.url)}
         target={p.url.startsWith("http") ? "_blank" : undefined}
         rel={p.url.startsWith("http") ? "noopener noreferrer" : undefined}>
             {p.title}
